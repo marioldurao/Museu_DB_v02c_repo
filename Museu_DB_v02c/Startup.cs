@@ -37,6 +37,9 @@ namespace Museu_DB_v02c
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
+
+            services.AddDbContext<Museu_DB_v02cContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("Museu_DB_v02cContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
