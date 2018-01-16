@@ -1,48 +1,176 @@
-﻿@model Museu_DB_v02c.Models.Visitor
+﻿@using ChartJSCore.Models
+@model Museu_DB_v02c.Models.Visitor
+
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<H1> Welcome to Our Museum</H1>
+<h2>Let us know you better</h2>
 
-<h4>Visitor</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Date" class="control-label"></label>
-                <input asp-for="Date" class="form-control" />
-                <span asp-validation-for="Date" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Age_Group" class="control-label"></label>
-                <input asp-for="Age_Group" class="form-control" />
-                <span asp-validation-for="Age_Group" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Nationality" class="control-label"></label>
-                <input asp-for="Nationality" class="form-control" />
-                <span asp-validation-for="Nationality" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+
+            <label asp-for="Nationality" class="control-label"></label>
+            <table class="form-group" data-bind="Nationality">
+
+                <tr>
+                    <td style="padding-right:10px" id="Nationality_cell_0">
+                        <img src="@Url.Content("~/images/" + @ViewBag.NationalityStringList[0] + ".png")" alt=@ViewBag.NationalityStringList[0] />
+                    </td>
+                    <td style="padding-right:10px" id="Nationality_cell_1">
+                        <img src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[1]+".png")" alt=@ViewBag.NationalityStringList[1] />
+                    </td>
+                    <td style="padding-right:10px" id="Nationality_cell_2">
+                        <img src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[2]+".png")" alt=@ViewBag.NationalityStringList[2] />
+                    </td>
+                    <td style="padding-right:10px" id="Nationality_cell_3">
+                        <img src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[3]+".png")" alt=@ViewBag.NationalityStringList[3] />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top:10px">
+                </tr>
+                <tr>
+                    <td id="Nationality_cell_4">
+                        <img src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[4]+".png")" alt=@ViewBag.NationalityStringList[4] />
+                    </td>
+                    <td id="Nationality_cell_5">
+                        <img src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[5]+".png")" alt=@ViewBag.NationalityStringList[5] />
+                    </td>
+                    <td id="Nationality_cell_6">
+                        <img src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[6]+".png")" alt=@ViewBag.NationalityStringList[6] />
+                    </td>
+                    <td id="Nationality_cell_7">
+                        <img src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[7]+".png")" alt=@ViewBag.NationalityStringList[7] />
+                    </td>
+                </tr>
+                <input id=nationalityInput name="Nationality" type="hidden" value="" />
+            </table>
+            @*<div class="form-group">
+                    <label asp-for="Age_Group" class="control-label"></label>
+                    <input asp-for="Age_Group" class="form-control" />
+                    <span asp-validation-for="Age_Group" class="text-danger"></span>
+                </div>*@
+            <div>
+
                 <label asp-for="Gender" class="control-label"></label>
-                <input asp-for="Gender" class="form-control" />
-                <span asp-validation-for="Gender" class="text-danger"></span>
+                <table class="form-group" data-bind="Gender">
+
+                    <tr>
+                        <td style="padding-right:10px" id="Gender_cell_0">
+                            <img src="@Url.Content("~/images/Male.jpg")" alt="Male" />
+                        </td>
+
+                        <td style="padding-right:10px" id="Gender_cell_1">
+                            <img src="@Url.Content("~/images/Female.png")" alt="Female" />
+                        </td>
+
+                    </tr>
+                    <input id=genderInput name="Gender" type="hidden" value="" />
+                </table>
             </div>
+
+            <div>
+
+                <label asp-for="Age_Group" class="control-label"></label>
+                <table class="form-group" data-bind="Age_Group">
+
+                    <tr>
+                        <td align="center" valign="middle" id="Age_cell_0">
+                            <img src="@Url.Content("~/images/Ageevolution0.png")" alt="0 to 2" />
+                            <p>0 to 2</p>
+                        </td>
+                        <td align="center" valign="middle" id="Age_cell_1">
+                            <img src="@Url.Content("~/images/Ageevolution1.png")" alt="3 to 12" />
+                            <p>3 to 12</p>
+                        </td>
+                        <td align="center" valign="middle" id="Age_cell_2">
+                            <img src="@Url.Content("~/images/Ageevolution2.png")" alt="13 to 18" />
+                            <p>13 to 18</p>
+                        </td>
+                        <td align="center" valign="middle" id="Age_cell_3">
+                            <img src="@Url.Content("~/images/Ageevolution3.png")" alt="19 to 30" />
+                            <p>19 to 30</p>
+                        </td>
+                        <td align="center" valign="middle" id="Age_cell_4">
+                            <img src="@Url.Content("~/images/Ageevolution4.png")" alt="31 to 45" />
+                            <p>31 to 45</p>
+                        </td>
+                        <td align="center" valign="middle" id="Age_cell_5">
+                            <img src="@Url.Content("~/images/Ageevolution5.png")" alt="46 to 64" />
+                            <p>46 to 64</p>
+                        </td>
+                        <td align="center" valign="middle" id="Age_cell_6">
+                            <img src="@Url.Content("~/images/Ageevolution6.png")" alt="65 to 99" />
+                            <p>65 to 99</p>
+                        </td>
+
+                    </tr>
+                    <input id=Age_GroupInput name="Age_Group" type="hidden" value="" />
+                </table>
+            </div>
+
+
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Submit" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
+
+
+
 
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
+
+
+    <script type="text/javascript">
+
+    //nationality callbacks
+    $('#Nationality_cell_0').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[0]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[0]' + "!", 1000); });
+    $('#Nationality_cell_1').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[1]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[1]' + "!", 1000); });
+    $('#Nationality_cell_2').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[2]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[2]' + "!", 1000); });
+    $('#Nationality_cell_3').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[3]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[3]' + "!", 1000); });
+    $('#Nationality_cell_4').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[4]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[4]' + "!", 1000); });
+    $('#Nationality_cell_5').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[5]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[5]' + "!", 1000); });
+    $('#Nationality_cell_6').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[6]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[6]' + "!", 1000); });
+    $('#Nationality_cell_7').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[7]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[7]' + "!", 1000); });
+    //nationality callbacks
+    $('#Gender_cell_0').click(function () { document.getElementById('genderInput').value = "Male"; tempAlert("You've clicked in Male", 2000); });
+    $('#Gender_cell_1').click(function () { document.getElementById('genderInput').value = "Female"; tempAlert("You've clicked in Female", 2000); });
+    //Age_Group callbacks
+    $('#Age_cell_0').click(function () { document.getElementById('Age_GroupInput').value = "1"; tempAlert("You've clicked in 0 to 2", 2000); });
+    $('#Age_cell_1').click(function () { document.getElementById('Age_GroupInput').value = "8"; tempAlert("You've clicked in 3 to 12", 2000); });
+    $('#Age_cell_2').click(function () { document.getElementById('Age_GroupInput').value = "16"; tempAlert("You've clicked in 13 to 18", 2000); });
+    $('#Age_cell_3').click(function () { document.getElementById('Age_GroupInput').value = "25"; tempAlert("You've clicked in 19 to 30", 2000); });
+    $('#Age_cell_4').click(function () { document.getElementById('Age_GroupInput').value = "38"; tempAlert("You've clicked in 31 to 45", 2000); });
+    $('#Age_cell_5').click(function () { document.getElementById('Age_GroupInput').value = "52"; tempAlert("You've clicked in 46 to 64", 2000); });
+    $('#Age_cell_6').click(function () { document.getElementById('Age_GroupInput').value = "70"; tempAlert("You've clicked in 65 to 99", 2000); });
+
+
+        function tempAlert(msg, duration) {
+            var el = document.createElement("div");
+            el.setAttribute("style", "position:absolute;top:40%;left:20%;background-color:white;");
+            el.innerHTML = msg;
+            setTimeout(function() {
+                    el.parentNode.removeChild(el);
+                },
+                duration);
+            document.body.appendChild(el);
+        }
+
+
+    </script>
+
+
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

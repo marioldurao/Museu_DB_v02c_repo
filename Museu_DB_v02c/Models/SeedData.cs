@@ -52,6 +52,38 @@ namespace Museu_DB_v02c.Models
                         Nationality = "Irish",
                         Gender = "Male",
                         Date = dateOnly
+                    },
+
+                new Visitor
+                {
+                    Age_Group = 45,
+                    Nationality = "Japanese",
+                    Gender = "Female",
+                    Date = dateOnly
+                },
+
+                new Visitor
+                {
+                    Age_Group = 25,
+                    Nationality = "Italian",
+                    Gender = "Female",
+                    Date = dateOnly
+                },
+
+                new Visitor
+                {
+                    Age_Group = 33,
+                    Nationality = "British",
+                    Gender = "Male",
+                    Date = dateOnly
+                },
+
+                new Visitor
+                    {
+                        Age_Group = 29,
+                        Nationality = "French",
+                        Gender = "Female",
+                        Date = dateOnly
                     }
                 );
                 context.SaveChanges();

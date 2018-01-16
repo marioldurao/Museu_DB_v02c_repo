@@ -19,38 +19,9 @@ namespace Museu_DB_v02c.Controllers
         }
 
         // GET: Visitors
-        public async Task<IActionResult> Index(string visitorGender, string searchString)
+        public async Task<IActionResult> Index()
         {
-            // Use LINQ to get list of genders.
-            IQueryable<string> genderQuery = from v in _context.Visitor
-                orderby v.Gender
-                select v.Gender;
-
-
-            var visitors = from v in _context.Visitor
-                select v;
-
-          
-
-            if (!string.IsNullOrEmpty(searchString))
-            {
-                visitors = visitors.Where(s => s.Nationality.Contains(searchString)); // Lambda Expression
-            }
-
-            if (!string.IsNullOrEmpty(visitorGender))
-            {
-                visitors = visitors.Where(x => x.Gender == visitorGender); 
-            }
-
-
-            //for gender search box
-            var visitorGenderVm = new VisitorStatsViewModel();
-            visitorGenderVm.GendersList = new SelectList(await genderQuery.Distinct().ToListAsync());
-            visitorGenderVm.Visitors = await visitors.ToListAsync();
-            
-
-            return View(visitorGenderVm);
-
+            return View(await _context.Visitor.ToListAsync());
         }
 
         // GET: Visitors/Details/5
@@ -72,50 +43,8 @@ namespace Museu_DB_v02c.Controllers
         }
 
         // GET: Visitors/Create
-        public async  Task<IActionResult> Create()
+        public IActionResult Create()
         {
-            
-            var visitors = from v in _context.Visitor
-                select v;
-
-            // Use LINQ to get list of Nationalities.
-            IQueryable<string> nationalityQuery = from v in _context.Visitor
-                orderby v.Nationality
-                select v.Nationality;
-           List<string> NationalityList = new List<string>(await nationalityQuery.Distinct().ToListAsync());
-
-            int index = 0;
-            int[] myNationalityInts = new int[NationalityList.Count];
-            index = 0;
-            foreach (var nationality in NationalityList)
-            {
-
-                int count_nationality = 0;
-                foreach (var v_nationality in visitors)
-                {
-                    //search for an option to replace this index for the index of g
-                    if (v_nationality.Nationality == nationality)
-                    {
-                        count_nationality++;
-                        myNationalityInts[index] = count_nationality;
-                    }
-
-                }
-                index++;
-            }
-
-            ViewBag.NationalityStringList = new List<string>() { "", "", "", "", "", "", "", "" };
-            int nationality_count = 0;
-            while (myNationalityInts.Max() != 0 && nationality_count <8)
-            {
-                int max = myNationalityInts.Max();
-                int max_index = myNationalityInts.ToList().IndexOf(max);                
-                ViewBag.NationalityStringList[nationality_count] = NationalityList[max_index];
-                myNationalityInts[max_index] = 0;
-                nationality_count++;
-            }
-
-
             return View();
         }
 
@@ -124,11 +53,10 @@ namespace Museu_DB_v02c.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID, Age_Group,Nationality,Gender")] Visitor visitor)
+        public async Task<IActionResult> Create([Bind("Date,ID,Age_Group,Nationality,Gender")] Visitor visitor)
         {
             if (ModelState.IsValid)
             {
-                visitor.Date = DateTime.Today;                
                 _context.Add(visitor);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -157,7 +85,7 @@ namespace Museu_DB_v02c.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Date, Age_Group,Nationality,Gender")] Visitor visitor)
+        public async Task<IActionResult> Edit(int id, [Bind("Date,ID,Age_Group,Nationality,Gender")] Visitor visitor)
         {
             if (id != visitor.ID)
             {

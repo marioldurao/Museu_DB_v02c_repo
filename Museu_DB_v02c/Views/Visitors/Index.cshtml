@@ -1,38 +1,51 @@
-﻿@model IEnumerable<Museu_DB_v02c.Models.Visitor>
+﻿
+@model Museu_DB_v02c.Models.VisitorStatsViewModel
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>List of Visitors</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">New Visitor Entry</a>
 </p>
+
+<form asp-controller="Visitors" asp-action="Index" method="get">
+    <p>
+        Gender:
+        <select asp-for="VisitorGender" asp-items="Model.GendersList">
+            <option value="">All</option>
+        </select>
+
+
+        Nationality: <input type="text" name="SearchString">
+        <input type="submit" value="Filter"/>
+    </p>
+</form>
+
+
 <table class="table">
     <thead>
-        <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Date)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Age_Group)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Nationality)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Gender)
-                </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Visitors[0].Age_Group)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Visitors[0].Nationality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Visitors[0].Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Visitors[0].Date)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model.Visitors) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Age_Group)
             </td>
@@ -43,11 +56,14 @@
                 @Html.DisplayFor(modelItem => item.Gender)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>

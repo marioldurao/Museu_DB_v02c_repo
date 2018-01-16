@@ -1,0 +1,196 @@
+﻿@using Microsoft.EntityFrameworkCore
+
+@using ChartJSCore.Models;
+
+
+@model Museu_DB_v02c.Models.VisitorStatsViewModel
+
+@{
+    ViewData["Title"] = "Stats";
+}
+
+
+<h1>General Statistics</h1>
+
+
+<h2>
+    Total Visitors :
+    @Html.DisplayFor(model => model.Visitors.Count)
+</h2>
+
+<div>
+    @* div for graphic*@
+    @{
+        ViewData["Title"] = "Home Page";
+    }
+
+    <div><canvas id="lineChart"></canvas></div>
+
+    @{ChartJSCore.Models.Chart Datechart = (ChartJSCore.Models.Chart)ViewData["DateChart"]; }
+
+    <div><canvas id="lineChart_2"></canvas></div>
+    @{ChartJSCore.Models.Chart NationalityChart = (ChartJSCore.Models.Chart)ViewData["NationalityChart"]; }
+
+    <div><canvas id="AgeChart"></canvas></div>
+    @{ChartJSCore.Models.Chart AgeChart = (ChartJSCore.Models.Chart)ViewData["AgeChart"]; }
+
+    <div><canvas id="GenderChart"></canvas></div>
+    @{ChartJSCore.Models.Chart GenderChart = (ChartJSCore.Models.Chart)ViewData["GenderChart"]; }
+
+    @section Scripts {
+        <script src="~/lib/Chart.js/dist/Chart.js"></script>
+        <script>
+            @Html.Raw(Datechart.CreateChartCode("lineChart"));
+        </script>
+
+        <script>
+            @Html.Raw(NationalityChart.CreateChartCode("lineChart_2"));
+        </script>
+
+        <script>
+            @Html.Raw(AgeChart.CreateChartCode("AgeChart"));
+        </script>
+
+        <script>
+            @Html.Raw(GenderChart.CreateChartCode("GenderChart"));
+        </script>
+    }
+
+</div>
+
+
+
+@*<p>
+        Male Num :
+        @Html.DisplayFor(model => model.MaleNum)
+    </p>
+
+    <p>
+        Female Num :
+        @Html.DisplayFor(model => model.FemaleNum)
+    </p>*@
+@*
+
+    <h2>
+        Visitors Genders
+    </h2>
+    <table style="width:100%">
+
+        <tr>
+            @foreach (var item in Model.GendersList)
+            {
+                <th>
+                    @Html.DisplayName(@item.Text)
+                </th>
+
+            }
+        </tr>
+        <tr>
+            @foreach (var item in Model.GenderInts)
+            {
+                <td>
+                    @Html.DisplayName(item.ToString())
+                </td>
+
+            }
+
+        </tr>
+
+    </table>
+    $1$    nationality rows#1#
+
+    <h2>
+        Visitors Nationalities
+    </h2>
+
+    <table style="width:100%">
+        <tr>
+            @foreach (var item in Model.NationalityList)
+            {
+                <th>
+                    @Html.DisplayName(@item.Text)
+                </th>
+
+            }
+        </tr>
+        <tr>
+            @foreach (var item in Model.NationalityInts)
+            {
+                <td>
+                    @Html.DisplayName(item.ToString())
+                </td>
+
+            }
+
+        </tr>
+
+    </table>
+    $1$Age Rows#1#
+
+    <h2>
+        Visitors Ages
+    </h2>
+
+    <table style="width:100%">
+        <tr>
+            @foreach (var item in Model.AgeList)
+            {
+                <th>
+                    @Html.DisplayName(@item.Text)
+                </th>
+
+            }
+        </tr>
+        <tr>
+            @foreach (var item in Model.AgeInts)
+            {
+                <td>
+                    @Html.DisplayName(item.ToString())
+                </td>
+
+            }
+
+        </tr>
+
+    </table>
+
+    <h2>
+        Date of Visit
+    </h2>
+
+    <table style="width:100%">
+        <tr>
+            @foreach (var item in Model.DateList)
+            {
+                <th>
+                    @Html.DisplayName(@item.Text)
+                </th>
+
+            }
+        </tr>
+        <tr>
+            @foreach (var item in Model.DateInts)
+            {
+                <td>
+                    @Html.DisplayName(item.ToString())
+                </td>
+
+            }
+
+        </tr>
+
+    </table>
+
+*@
+
+@*writing out the values on the vars *@
+@*
+
+    @Html.DisplayFor(model => model.GendersList.Items)
+
+    @Html.DisplayFor(model => model.GenderInts)*@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+
+@*TODO: add count 0 for all ages that are not present, so that graphic becames more easy to extrapolate conclusions *@
+
