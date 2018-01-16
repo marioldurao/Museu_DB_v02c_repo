@@ -9,7 +9,7 @@ namespace Museu_DB_v02c.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable( 
+            migrationBuilder.CreateTable(  
                 name: "Visitor",
                 columns: table => new
                 {
