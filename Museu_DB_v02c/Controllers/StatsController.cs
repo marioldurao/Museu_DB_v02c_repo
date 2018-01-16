@@ -13,9 +13,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ChartJSCore.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Museu_DB_v02c.Controllers
 {
+    [Authorize]
     public class StatsController : Controller
     {
         private readonly Museu_DB_v02cContext _context;

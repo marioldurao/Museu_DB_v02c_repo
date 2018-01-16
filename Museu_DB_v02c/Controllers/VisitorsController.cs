@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,7 @@ namespace Museu_DB_v02c.Controllers
         }
 
         // GET: Visitors
+        [Authorize]
         public async Task<IActionResult> Index(string visitorGender, string searchString)
         {
             // Use LINQ to get list of genders.
@@ -131,7 +133,7 @@ namespace Museu_DB_v02c.Controllers
                 visitor.Date = DateTime.Today;                
                 _context.Add(visitor);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Create));
             }
             return View(visitor);
         }
