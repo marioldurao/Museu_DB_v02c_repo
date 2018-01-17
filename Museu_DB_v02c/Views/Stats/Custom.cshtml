@@ -1,0 +1,31 @@
+﻿@using Microsoft.EntityFrameworkCore
+
+@using ChartJSCore.Models;
+
+
+@model Museu_DB_v02c.Models.VisitorStatsViewModel
+
+@{
+    ViewData["Title"] = "CustomStats";
+}
+
+
+<h1>Custom Statistics</h1>
+
+
+<h2>
+    Total Visitors :
+    @Html.DisplayFor(model => model.Visitors.Count)
+</h2>
+
+<div>
+    @* div for graphic*@
+    @{
+        ViewData["Title"] = "Home Page";
+    }
+    
+    
+
+</div>
+
+

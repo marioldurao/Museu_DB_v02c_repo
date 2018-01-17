@@ -260,16 +260,7 @@ namespace Museu_DB_v02c.Controllers
             return null;
         }
 
-        //GET: /StatsController/Welcome
-        public IActionResult Welcome(string name, int numTimes = 1)
-        {
-            ViewData["Message"] = "Hello" + name;
-            ViewData["NumTimes"] = numTimes;
-
-
-
-            return View();
-        }
+        
 
         public void createNewChart(List<string> ChartLabels, IList<double> ChartValues, string chartType, string ChartTitle, string ChartID)
         {

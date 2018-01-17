@@ -307,7 +307,7 @@
 
 
             <div class="form-group">
-                <input type="submit" value="Submit" class="btn btn-default" id="submit_create_button" />
+                <input type="submit" value="Submit" disabled="disabled" class="btn btn-default" id="submit_create_button" />
 
             </div>
         </form>
@@ -323,6 +323,11 @@
 @section Scripts {
     
 <script type="text/javascript">
+    function verifuIfSubmitIsReady() {
+        if ((document.getElementById('nationalityInput').value.length > 0) && (document.getElementById('genderInput').value.length > 0)
+            && (document.getElementById('Age_GroupInput').value.length > 0))
+        $('#submit_create_button').removeAttr('disabled');
+    }
 
         var el
         function togCell(col){
@@ -336,47 +341,53 @@
             window.addEventListener('click', function(e){el=e.target}, true)
 
         //nationality callbacks
-        $('#Nationality_cell_0').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[0]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[0]' + "!", 1000);});
+        $('#Nationality_cell_0').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[0]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[0]' + "!", 1000);
+            verifuIfSubmitIsReady(); 
+        });
         $('#img0').click(function () { togCell('greenyellow');});
-        $('#Nationality_cell_1').click(function() { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[1]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[1]' + "!", 1000); });
+        $('#Nationality_cell_1').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[1]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[1]' + "!", 1000); verifuIfSubmitIsReady(); });
         $('#img1').click(function () { togCell('greenyellow'); });
-        $('#Nationality_cell_2').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[2]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[2]' + "!", 1000); });
+        $('#Nationality_cell_2').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[2]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[2]' + "!", 1000); verifuIfSubmitIsReady(); });
         $('#img2').click(function () { togCell('greenyellow'); });
-        $('#Nationality_cell_3').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[3]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[3]' + "!", 1000); });
+        $('#Nationality_cell_3').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[3]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[3]' + "!", 1000); verifuIfSubmitIsReady(); });
         $('#img3').click(function () { togCell('greenyellow'); });
-        $('#Nationality_cell_4').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[4]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[4]' + "!", 1000); });
+        $('#Nationality_cell_4').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[4]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[4]' + "!", 1000); verifuIfSubmitIsReady(); });
         $('#img4').click(function () { togCell('greenyellow'); });
-        $('#Nationality_cell_5').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[5]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[5]' + "!", 1000); });
+        $('#Nationality_cell_5').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[5]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[5]' + "!", 1000); verifuIfSubmitIsReady(); });
         $('#img5').click(function () { togCell('greenyellow'); });
-        $('#Nationality_cell_6').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[6]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[6]' + "!", 1000); });
+        $('#Nationality_cell_6').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[6]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[6]' + "!", 1000); verifuIfSubmitIsReady(); });
         $('#img6').click(function () { togCell('greenyellow'); });
-        $('#Nationality_cell_7').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[7]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[7]' + "!", 1000); });
+        $('#Nationality_cell_7').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[7]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[7]' + "!", 1000); verifuIfSubmitIsReady(); });
         $('#img7').click(function () { togCell('greenyellow'); });
-        $('#Nationality_cell_8').click(function () { document.getElementById('nationalityInput').value = $('#Nationality_cell_8 option:selected').text(); tempAlert("You've choosen in " + $('#Nationality_cell_8 option:selected').text() + "!", 2000); });
+        $('#Nationality_cell_8').click(function () { document.getElementById('nationalityInput').value = $('#Nationality_cell_8 option:selected').text(); tempAlert("You've choosen in " + $('#Nationality_cell_8 option:selected').text() + "!", 2000); verifuIfSubmitIsReady(); });
         //nationality callbacks
-        $('#Gender_cell_0').click(function () { document.getElementById('genderInput').value = "Male"; tempAlert("You've clicked in Male", 2000); });
+        $('#Gender_cell_0').click(function () { document.getElementById('genderInput').value = "Male"; tempAlert("You've clicked in Male", 2000); verifuIfSubmitIsReady(); });
         $('#genderMale').click(function () { togCell('greenyellow');});
-        $('#Gender_cell_1').click(function () { document.getElementById('genderInput').value = "Female"; tempAlert("You've clicked in Female", 2000); });
+        $('#Gender_cell_1').click(function () { document.getElementById('genderInput').value = "Female"; tempAlert("You've clicked in Female", 2000); verifuIfSubmitIsReady(); });
         $('#genderFemale').click(function () { togCell('greenyellow'); });
         //Age_Group callbacks
-        $('#Age_cell_0').click(function () { document.getElementById('Age_GroupInput').value = "1"; tempAlert("You've clicked in 0 to 2", 2000); });
+        $('#Age_cell_0').click(function () { document.getElementById('Age_GroupInput').value = "1"; tempAlert("You've clicked in 0 to 2", 2000); verifuIfSubmitIsReady(); });
         $('#Age_img_0').click(function () { togCell('greenyellow'); });
-        $('#Age_cell_1').click(function () { document.getElementById('Age_GroupInput').value = "8"; tempAlert("You've clicked in 3 to 12", 2000); });
+        $('#Age_cell_1').click(function () { document.getElementById('Age_GroupInput').value = "8"; tempAlert("You've clicked in 3 to 12", 2000); verifuIfSubmitIsReady();  });
         $('#Age_img_1').click(function () { togCell('greenyellow'); });
-        $('#Age_cell_2').click(function () { document.getElementById('Age_GroupInput').value = "16"; tempAlert("You've clicked in 13 to 18", 2000); });
+        $('#Age_cell_2').click(function () { document.getElementById('Age_GroupInput').value = "16"; tempAlert("You've clicked in 13 to 18", 2000); verifuIfSubmitIsReady(); });
         $('#Age_img_2').click(function () { togCell('greenyellow'); });
-        $('#Age_cell_3').click(function () { document.getElementById('Age_GroupInput').value = "25"; tempAlert("You've clicked in 19 to 30", 2000); });
+        $('#Age_cell_3').click(function () { document.getElementById('Age_GroupInput').value = "25"; tempAlert("You've clicked in 19 to 30", 2000); verifuIfSubmitIsReady(); });
         $('#Age_img_3').click(function () { togCell('greenyellow'); });
-        $('#Age_cell_4').click(function () { document.getElementById('Age_GroupInput').value = "38"; tempAlert("You've clicked in 31 to 45", 2000); });
+        $('#Age_cell_4').click(function () { document.getElementById('Age_GroupInput').value = "38"; tempAlert("You've clicked in 31 to 45", 2000); verifuIfSubmitIsReady();  });
         $('#Age_img_4').click(function () { togCell('greenyellow'); });
-        $('#Age_cell_5').click(function () { document.getElementById('Age_GroupInput').value = "52"; tempAlert("You've clicked in 46 to 64", 2000); });
+        $('#Age_cell_5').click(function () { document.getElementById('Age_GroupInput').value = "52"; tempAlert("You've clicked in 46 to 64", 2000); verifuIfSubmitIsReady(); });
         $('#Age_img_5').click(function () { togCell('greenyellow'); });
-        $('#Age_cell_6').click(function () { document.getElementById('Age_GroupInput').value = "70"; tempAlert("You've clicked in 65 to 99", 2000); });
+        $('#Age_cell_6').click(function () { document.getElementById('Age_GroupInput').value = "70"; tempAlert("You've clicked in 65 to 99", 2000); verifuIfSubmitIsReady(); });
         $('#Age_img_6').click(function () { togCell('greenyellow'); });
 
+        $('#submit_create_button').click(function() {
+             tempAlert("Thank's for your time! Enjoy your visit!", 3000);
+        });
+        
         function tempAlert(msg, duration) {
             var el = document.createElement("div");
-            el.setAttribute("style", "position:absolute;top:40%;left:20%;background-color:white;");
+            el.setAttribute("style", "position:absolute; width = '400px'; heigth='400px'; top:50%; left:50%; background-color:cyan;");
             el.innerHTML = msg;
             setTimeout(function() {
                     el.parentNode.removeChild(el);

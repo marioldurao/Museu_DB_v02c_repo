@@ -133,6 +133,7 @@ namespace Museu_DB_v02c.Controllers
                 visitor.Date = DateTime.Today;                
                 _context.Add(visitor);
                 await _context.SaveChangesAsync();
+                await Task.Delay(4000);
                 return RedirectToAction(nameof(Create));
             }
             return View(visitor);
