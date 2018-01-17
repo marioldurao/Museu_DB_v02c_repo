@@ -16,58 +16,248 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <label asp-for="Nationality" class="control-label"></label>
-            <table class="form-group" data-bind="Nationality">
+            <table class="form-group" data-bind="Nationality" style="background-color:white;">
+
 
                 <tr>
-                    <td style="padding-right:10px" id="Nationality_cell_0">
-                        <img src="@Url.Content("~/images/" + @ViewBag.NationalityStringList[0] + ".png")" alt=@ViewBag.NationalityStringList[0] />
+                    <td style="padding:20px 20px 20px 20px;" id="Nationality_cell_0">
+                        <img id="img0" src="@Url.Content("~/images/" + @ViewBag.NationalityStringList[0] + ".png")" alt=@ViewBag.NationalityStringList[0] />
                     </td>
-                    <td style="padding-right:10px" id="Nationality_cell_1">
-                        <img src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[1]+".png")" alt=@ViewBag.NationalityStringList[1] />
+                    <td style="padding:20px 20px 20px 20px;" id="Nationality_cell_1">
+                        <img id="img1" src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[1]+".png")" alt=@ViewBag.NationalityStringList[1] />
                     </td>
-                    <td style="padding-right:10px" id="Nationality_cell_2">
-                        <img src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[2]+".png")" alt=@ViewBag.NationalityStringList[2] />
+                    <td style="padding:20px 20px 20px 20px;" id="Nationality_cell_2">
+                        <img id="img2" src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[2]+".png")" alt=@ViewBag.NationalityStringList[2] />
                     </td>
-                    <td style="padding-right:10px" id="Nationality_cell_3">
-                        <img src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[3]+".png")" alt=@ViewBag.NationalityStringList[3] />
+                    <td style="padding:20px 20px 20px 20px;" id="Nationality_cell_3">
+                        <img id="img3" src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[3]+".png")" alt=@ViewBag.NationalityStringList[3] />
                     </td>
-                </tr>
-                <tr>
-                    <td style="padding-top:10px">
-                </tr>
-                <tr>
-                    <td id="Nationality_cell_4">
-                        <img src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[4]+".png")" alt=@ViewBag.NationalityStringList[4] />
+
+                    <td style="padding:20px 20px 20px 20px;" id="Nationality_cell_4">
+                        <img id="img4" src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[4]+".png")" alt=@ViewBag.NationalityStringList[4] />
                     </td>
-                    <td id="Nationality_cell_5">
-                        <img src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[5]+".png")" alt=@ViewBag.NationalityStringList[5] />
+                    <td style="padding:20px 20px 20px 20px;" id="Nationality_cell_5">
+                        <img id="img5" src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[5]+".png")" alt=@ViewBag.NationalityStringList[5] />
                     </td>
-                    <td id="Nationality_cell_6">
-                        <img src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[6]+".png")" alt=@ViewBag.NationalityStringList[6] />
+                    <td style="padding:20px 20px 20px 20px;" id="Nationality_cell_6">
+                        <img id="img6" src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[6]+".png")" alt=@ViewBag.NationalityStringList[6] />
                     </td>
-                    <td id="Nationality_cell_7">
-                        <img src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[7]+".png")" alt=@ViewBag.NationalityStringList[7] />
+                    <td style="padding:20px 20px 20px 20px;" id="Nationality_cell_7">
+                        <img id="img7" src="@Url.Content("~/images/"+@ViewBag.NationalityStringList[7]+".png")" alt=@ViewBag.NationalityStringList[7] />
                     </td>
                 </tr>
+
                 <input id=nationalityInput name="Nationality" type="hidden" value="" />
             </table>
-            @*<div class="form-group">
-                    <label asp-for="Age_Group" class="control-label"></label>
-                    <input asp-for="Age_Group" class="form-control" />
-                    <span asp-validation-for="Age_Group" class="text-danger"></span>
-                </div>*@
+
+            <select id="Nationality_cell_8">
+                <option value="">-- if the flag is not here, select another one --</option>
+                <option value="afghan">Afghan</option>
+                <option value="albanian">Albanian</option>
+                <option value="algerian">Algerian</option>
+                <option value="american">American</option>
+                <option value="andorran">Andorran</option>
+                <option value="angolan">Angolan</option>
+                <option value="antiguans">Antiguans</option>
+                <option value="argentinean">Argentinean</option>
+                <option value="armenian">Armenian</option>
+                <option value="australian">Australian</option>
+                <option value="austrian">Austrian</option>
+                <option value="azerbaijani">Azerbaijani</option>
+                <option value="bahamian">Bahamian</option>
+                <option value="bahraini">Bahraini</option>
+                <option value="bangladeshi">Bangladeshi</option>
+                <option value="barbadian">Barbadian</option>
+                <option value="barbudans">Barbudans</option>
+                <option value="batswana">Batswana</option>
+                <option value="belarusian">Belarusian</option>
+                <option value="belgian">Belgian</option>
+                <option value="belizean">Belizean</option>
+                <option value="beninese">Beninese</option>
+                <option value="bhutanese">Bhutanese</option>
+                <option value="bolivian">Bolivian</option>
+                <option value="bosnian">Bosnian</option>
+                <option value="brazilian">Brazilian</option>
+                <option value="british">British</option>
+                <option value="bruneian">Bruneian</option>
+                <option value="bulgarian">Bulgarian</option>
+                <option value="burkinabe">Burkinabe</option>
+                <option value="burmese">Burmese</option>
+                <option value="burundian">Burundian</option>
+                <option value="cambodian">Cambodian</option>
+                <option value="cameroonian">Cameroonian</option>
+                <option value="canadian">Canadian</option>
+                <option value="cape verdean">Cape Verdean</option>
+                <option value="central african">Central African</option>
+                <option value="chadian">Chadian</option>
+                <option value="chilean">Chilean</option>
+                <option value="chinese">Chinese</option>
+                <option value="colombian">Colombian</option>
+                <option value="comoran">Comoran</option>
+                <option value="congolese">Congolese</option>
+                <option value="costa rican">Costa Rican</option>
+                <option value="croatian">Croatian</option>
+                <option value="cuban">Cuban</option>
+                <option value="cypriot">Cypriot</option>
+                <option value="czech">Czech</option>
+                <option value="danish">Danish</option>
+                <option value="djibouti">Djibouti</option>
+                <option value="dominican">Dominican</option>
+                <option value="dutch">Dutch</option>
+                <option value="east timorese">East Timorese</option>
+                <option value="ecuadorean">Ecuadorean</option>
+                <option value="egyptian">Egyptian</option>
+                <option value="emirian">Emirian</option>
+                <option value="equatorial guinean">Equatorial Guinean</option>
+                <option value="eritrean">Eritrean</option>
+                <option value="estonian">Estonian</option>
+                <option value="ethiopian">Ethiopian</option>
+                <option value="fijian">Fijian</option>
+                <option value="filipino">Filipino</option>
+                <option value="finnish">Finnish</option>
+                <option value="french">French</option>
+                <option value="gabonese">Gabonese</option>
+                <option value="gambian">Gambian</option>
+                <option value="georgian">Georgian</option>
+                <option value="german">German</option>
+                <option value="ghanaian">Ghanaian</option>
+                <option value="greek">Greek</option>
+                <option value="grenadian">Grenadian</option>
+                <option value="guatemalan">Guatemalan</option>
+                <option value="guinea-bissauan">Guinea-Bissauan</option>
+                <option value="guinean">Guinean</option>
+                <option value="guyanese">Guyanese</option>
+                <option value="haitian">Haitian</option>
+                <option value="herzegovinian">Herzegovinian</option>
+                <option value="honduran">Honduran</option>
+                <option value="hungarian">Hungarian</option>
+                <option value="icelander">Icelander</option>
+                <option value="indian">Indian</option>
+                <option value="indonesian">Indonesian</option>
+                <option value="iranian">Iranian</option>
+                <option value="iraqi">Iraqi</option>
+                <option value="irish">Irish</option>
+                <option value="israeli">Israeli</option>
+                <option value="italian">Italian</option>
+                <option value="ivorian">Ivorian</option>
+                <option value="jamaican">Jamaican</option>
+                <option value="japanese">Japanese</option>
+                <option value="jordanian">Jordanian</option>
+                <option value="kazakhstani">Kazakhstani</option>
+                <option value="kenyan">Kenyan</option>
+                <option value="kittian and nevisian">Kittian and Nevisian</option>
+                <option value="kuwaiti">Kuwaiti</option>
+                <option value="kyrgyz">Kyrgyz</option>
+                <option value="laotian">Laotian</option>
+                <option value="latvian">Latvian</option>
+                <option value="lebanese">Lebanese</option>
+                <option value="liberian">Liberian</option>
+                <option value="libyan">Libyan</option>
+                <option value="liechtensteiner">Liechtensteiner</option>
+                <option value="lithuanian">Lithuanian</option>
+                <option value="luxembourger">Luxembourger</option>
+                <option value="macedonian">Macedonian</option>
+                <option value="malagasy">Malagasy</option>
+                <option value="malawian">Malawian</option>
+                <option value="malaysian">Malaysian</option>
+                <option value="maldivan">Maldivan</option>
+                <option value="malian">Malian</option>
+                <option value="maltese">Maltese</option>
+                <option value="marshallese">Marshallese</option>
+                <option value="mauritanian">Mauritanian</option>
+                <option value="mauritian">Mauritian</option>
+                <option value="mexican">Mexican</option>
+                <option value="micronesian">Micronesian</option>
+                <option value="moldovan">Moldovan</option>
+                <option value="monacan">Monacan</option>
+                <option value="mongolian">Mongolian</option>
+                <option value="moroccan">Moroccan</option>
+                <option value="mosotho">Mosotho</option>
+                <option value="motswana">Motswana</option>
+                <option value="mozambican">Mozambican</option>
+                <option value="namibian">Namibian</option>
+                <option value="nauruan">Nauruan</option>
+                <option value="nepalese">Nepalese</option>
+                <option value="new zealander">New Zealander</option>
+                <option value="ni-vanuatu">Ni-Vanuatu</option>
+                <option value="nicaraguan">Nicaraguan</option>
+                <option value="nigerien">Nigerien</option>
+                <option value="north korean">North Korean</option>
+                <option value="northern irish">Northern Irish</option>
+                <option value="norwegian">Norwegian</option>
+                <option value="omani">Omani</option>
+                <option value="pakistani">Pakistani</option>
+                <option value="palauan">Palauan</option>
+                <option value="panamanian">Panamanian</option>
+                <option value="papua new guinean">Papua New Guinean</option>
+                <option value="paraguayan">Paraguayan</option>
+                <option value="peruvian">Peruvian</option>
+                <option value="polish">Polish</option>
+                <option value="portuguese">Portuguese</option>
+                <option value="qatari">Qatari</option>
+                <option value="romanian">Romanian</option>
+                <option value="russian">Russian</option>
+                <option value="rwandan">Rwandan</option>
+                <option value="saint lucian">Saint Lucian</option>
+                <option value="salvadoran">Salvadoran</option>
+                <option value="samoan">Samoan</option>
+                <option value="san marinese">San Marinese</option>
+                <option value="sao tomean">Sao Tomean</option>
+                <option value="saudi">Saudi</option>
+                <option value="scottish">Scottish</option>
+                <option value="senegalese">Senegalese</option>
+                <option value="serbian">Serbian</option>
+                <option value="seychellois">Seychellois</option>
+                <option value="sierra leonean">Sierra Leonean</option>
+                <option value="singaporean">Singaporean</option>
+                <option value="slovakian">Slovakian</option>
+                <option value="slovenian">Slovenian</option>
+                <option value="solomon islander">Solomon Islander</option>
+                <option value="somali">Somali</option>
+                <option value="south african">South African</option>
+                <option value="south korean">South Korean</option>
+                <option value="spanish">Spanish</option>
+                <option value="sri lankan">Sri Lankan</option>
+                <option value="sudanese">Sudanese</option>
+                <option value="surinamer">Surinamer</option>
+                <option value="swazi">Swazi</option>
+                <option value="swedish">Swedish</option>
+                <option value="swiss">Swiss</option>
+                <option value="syrian">Syrian</option>
+                <option value="taiwanese">Taiwanese</option>
+                <option value="tajik">Tajik</option>
+                <option value="tanzanian">Tanzanian</option>
+                <option value="thai">Thai</option>
+                <option value="togolese">Togolese</option>
+                <option value="tongan">Tongan</option>
+                <option value="trinidadian or tobagonian">Trinidadian or Tobagonian</option>
+                <option value="tunisian">Tunisian</option>
+                <option value="turkish">Turkish</option>
+                <option value="tuvaluan">Tuvaluan</option>
+                <option value="ugandan">Ugandan</option>
+                <option value="ukrainian">Ukrainian</option>
+                <option value="uruguayan">Uruguayan</option>
+                <option value="uzbekistani">Uzbekistani</option>
+                <option value="venezuelan">Venezuelan</option>
+                <option value="vietnamese">Vietnamese</option>
+                <option value="welsh">Welsh</option>
+                <option value="yemenite">Yemenite</option>
+                <option value="zambian">Zambian</option>
+                <option value="zimbabwean">Zimbabwean</option>
+            </select>
+
             <div>
 
                 <label asp-for="Gender" class="control-label"></label>
                 <table class="form-group" data-bind="Gender">
 
                     <tr>
-                        <td style="padding-right:10px" id="Gender_cell_0">
-                            <img src="@Url.Content("~/images/Male.jpg")" alt="Male" />
+                        <td style="padding:20px 20px 20px 20px;" id="Gender_cell_0">
+                            <img id="genderMale" src="@Url.Content("~/images/Male.jpg")" alt="Male" />
                         </td>
 
-                        <td style="padding-right:10px" id="Gender_cell_1">
-                            <img src="@Url.Content("~/images/Female.png")" alt="Female" />
+                        <td style="padding:20px 20px 20px 20px;" id="Gender_cell_1">
+                            <img id="genderFemale" src="@Url.Content("~/images/Female.png")" alt="Female" />
                         </td>
 
                     </tr>
@@ -81,32 +271,32 @@
                 <table class="form-group" data-bind="Age_Group">
 
                     <tr>
-                        <td align="center" valign="middle" id="Age_cell_0">
-                            <img src="@Url.Content("~/images/Ageevolution0.png")" alt="0 to 2" />
+                        <td style="padding:20px 20px 20px 20px;" align="center" valign="middle" id="Age_cell_0">
+                            <img id="Age_img_0" src="@Url.Content("~/images/Ageevolution0.png")" alt="0 to 2" />
                             <p>0 to 2</p>
                         </td>
-                        <td align="center" valign="middle" id="Age_cell_1">
-                            <img src="@Url.Content("~/images/Ageevolution1.png")" alt="3 to 12" />
+                        <td style="padding:20px 20px 20px 20px;" align="center" valign="middle" id="Age_cell_1">
+                            <img id="Age_img_1" src="@Url.Content("~/images/Ageevolution1.png")" alt="3 to 12" />
                             <p>3 to 12</p>
                         </td>
-                        <td align="center" valign="middle" id="Age_cell_2">
-                            <img src="@Url.Content("~/images/Ageevolution2.png")" alt="13 to 18" />
+                        <td style="padding:20px 20px 20px 20px;" align="center" valign="middle" id="Age_cell_2">
+                            <img id="Age_img_2" src="@Url.Content("~/images/Ageevolution2.png")" alt="13 to 18" />
                             <p>13 to 18</p>
                         </td>
-                        <td align="center" valign="middle" id="Age_cell_3">
-                            <img src="@Url.Content("~/images/Ageevolution3.png")" alt="19 to 30" />
+                        <td style="padding:20px 20px 20px 20px;" align="center" valign="middle" id="Age_cell_3">
+                            <img id="Age_img_3" src="@Url.Content("~/images/Ageevolution3.png")" alt="19 to 30" />
                             <p>19 to 30</p>
                         </td>
-                        <td align="center" valign="middle" id="Age_cell_4">
-                            <img src="@Url.Content("~/images/Ageevolution4.png")" alt="31 to 45" />
+                        <td style="padding:20px 20px 20px 20px;" align="center" valign="middle" id="Age_cell_4">
+                            <img id="Age_img_4" src="@Url.Content("~/images/Ageevolution4.png")" alt="31 to 45" />
                             <p>31 to 45</p>
                         </td>
-                        <td align="center" valign="middle" id="Age_cell_5">
-                            <img src="@Url.Content("~/images/Ageevolution5.png")" alt="46 to 64" />
+                        <td style="padding:20px 20px 20px 20px;" align="center" valign="middle" id="Age_cell_5">
+                            <img id="Age_img_5" src="@Url.Content("~/images/Ageevolution5.png")" alt="46 to 64" />
                             <p>46 to 64</p>
                         </td>
-                        <td align="center" valign="middle" id="Age_cell_6">
-                            <img src="@Url.Content("~/images/Ageevolution6.png")" alt="65 to 99" />
+                        <td style="padding:20px 20px 20px 20px;" align="center" valign="middle" id="Age_cell_6">
+                            <img id="Age_img_6" src="@Url.Content("~/images/Ageevolution6.png")" alt="65 to 99" />
                             <p>65 to 99</p>
                         </td>
 
@@ -118,7 +308,7 @@
 
             <div class="form-group">
                 <input type="submit" value="Submit" class="btn btn-default" id="submit_create_button" />
-                
+
             </div>
         </form>
     </div>
@@ -131,33 +321,58 @@
 </div>*@
 
 @section Scripts {
-
-
-    <script type="text/javascript">
-
-    //nationality callbacks
-    $('#Nationality_cell_0').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[0]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[0]' + "!", 1000); });
-    $('#Nationality_cell_1').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[1]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[1]' + "!", 1000); });
-    $('#Nationality_cell_2').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[2]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[2]' + "!", 1000); });
-    $('#Nationality_cell_3').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[3]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[3]' + "!", 1000); });
-    $('#Nationality_cell_4').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[4]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[4]' + "!", 1000); });
-    $('#Nationality_cell_5').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[5]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[5]' + "!", 1000); });
-    $('#Nationality_cell_6').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[6]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[6]' + "!", 1000); });
-    $('#Nationality_cell_7').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[7]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[7]' + "!", 1000); });
-    //nationality callbacks
-    $('#Gender_cell_0').click(function () { document.getElementById('genderInput').value = "Male"; tempAlert("You've clicked in Male", 2000); });
-    $('#Gender_cell_1').click(function () { document.getElementById('genderInput').value = "Female"; tempAlert("You've clicked in Female", 2000); });
-    //Age_Group callbacks
-    $('#Age_cell_0').click(function () { document.getElementById('Age_GroupInput').value = "1"; tempAlert("You've clicked in 0 to 2", 2000); });
-    $('#Age_cell_1').click(function () { document.getElementById('Age_GroupInput').value = "8"; tempAlert("You've clicked in 3 to 12", 2000); });
-    $('#Age_cell_2').click(function () { document.getElementById('Age_GroupInput').value = "16"; tempAlert("You've clicked in 13 to 18", 2000); });
-    $('#Age_cell_3').click(function () { document.getElementById('Age_GroupInput').value = "25"; tempAlert("You've clicked in 19 to 30", 2000); });
-    $('#Age_cell_4').click(function () { document.getElementById('Age_GroupInput').value = "38"; tempAlert("You've clicked in 31 to 45", 2000); });
-    $('#Age_cell_5').click(function () { document.getElementById('Age_GroupInput').value = "52"; tempAlert("You've clicked in 46 to 64", 2000); });
-    $('#Age_cell_6').click(function () { document.getElementById('Age_GroupInput').value = "70"; tempAlert("You've clicked in 65 to 99", 2000); });
-
-       
     
+<script type="text/javascript">
+
+        var el
+        function togCell(col){
+            if (typeof event!=='undefined')
+                el=event.srcElement
+            for (var i = 0; i < el.parentNode.parentNode.cells.length; i++)
+                el.parentNode.parentNode.cells[i].style.backgroundColor='white'
+            el.parentNode.style.backgroundColor = col
+        }
+        if (window.addEventListener)
+            window.addEventListener('click', function(e){el=e.target}, true)
+
+        //nationality callbacks
+        $('#Nationality_cell_0').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[0]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[0]' + "!", 1000);});
+        $('#img0').click(function () { togCell('greenyellow');});
+        $('#Nationality_cell_1').click(function() { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[1]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[1]' + "!", 1000); });
+        $('#img1').click(function () { togCell('greenyellow'); });
+        $('#Nationality_cell_2').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[2]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[2]' + "!", 1000); });
+        $('#img2').click(function () { togCell('greenyellow'); });
+        $('#Nationality_cell_3').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[3]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[3]' + "!", 1000); });
+        $('#img3').click(function () { togCell('greenyellow'); });
+        $('#Nationality_cell_4').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[4]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[4]' + "!", 1000); });
+        $('#img4').click(function () { togCell('greenyellow'); });
+        $('#Nationality_cell_5').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[5]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[5]' + "!", 1000); });
+        $('#img5').click(function () { togCell('greenyellow'); });
+        $('#Nationality_cell_6').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[6]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[6]' + "!", 1000); });
+        $('#img6').click(function () { togCell('greenyellow'); });
+        $('#Nationality_cell_7').click(function () { document.getElementById('nationalityInput').value = '@ViewBag.NationalityStringList[7]'; tempAlert("You've clicked in " + '@ViewBag.NationalityStringList[7]' + "!", 1000); });
+        $('#img7').click(function () { togCell('greenyellow'); });
+        $('#Nationality_cell_8').click(function () { document.getElementById('nationalityInput').value = $('#Nationality_cell_8 option:selected').text(); tempAlert("You've choosen in " + $('#Nationality_cell_8 option:selected').text() + "!", 2000); });
+        //nationality callbacks
+        $('#Gender_cell_0').click(function () { document.getElementById('genderInput').value = "Male"; tempAlert("You've clicked in Male", 2000); });
+        $('#genderMale').click(function () { togCell('greenyellow');});
+        $('#Gender_cell_1').click(function () { document.getElementById('genderInput').value = "Female"; tempAlert("You've clicked in Female", 2000); });
+        $('#genderFemale').click(function () { togCell('greenyellow'); });
+        //Age_Group callbacks
+        $('#Age_cell_0').click(function () { document.getElementById('Age_GroupInput').value = "1"; tempAlert("You've clicked in 0 to 2", 2000); });
+        $('#Age_img_0').click(function () { togCell('greenyellow'); });
+        $('#Age_cell_1').click(function () { document.getElementById('Age_GroupInput').value = "8"; tempAlert("You've clicked in 3 to 12", 2000); });
+        $('#Age_img_1').click(function () { togCell('greenyellow'); });
+        $('#Age_cell_2').click(function () { document.getElementById('Age_GroupInput').value = "16"; tempAlert("You've clicked in 13 to 18", 2000); });
+        $('#Age_img_2').click(function () { togCell('greenyellow'); });
+        $('#Age_cell_3').click(function () { document.getElementById('Age_GroupInput').value = "25"; tempAlert("You've clicked in 19 to 30", 2000); });
+        $('#Age_img_3').click(function () { togCell('greenyellow'); });
+        $('#Age_cell_4').click(function () { document.getElementById('Age_GroupInput').value = "38"; tempAlert("You've clicked in 31 to 45", 2000); });
+        $('#Age_img_4').click(function () { togCell('greenyellow'); });
+        $('#Age_cell_5').click(function () { document.getElementById('Age_GroupInput').value = "52"; tempAlert("You've clicked in 46 to 64", 2000); });
+        $('#Age_img_5').click(function () { togCell('greenyellow'); });
+        $('#Age_cell_6').click(function () { document.getElementById('Age_GroupInput').value = "70"; tempAlert("You've clicked in 65 to 99", 2000); });
+        $('#Age_img_6').click(function () { togCell('greenyellow'); });
 
         function tempAlert(msg, duration) {
             var el = document.createElement("div");
@@ -171,7 +386,7 @@
         }
 
 
-    </script>
+</script>
 
 
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
